@@ -6,7 +6,7 @@
     <title>Приглашение</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="/style.css" />
-    <script defer src="/main.js"></script>
+    <script defer src="./main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,5 +20,25 @@
       <p class="date">8 марта, 16:30</p>
       <p class="location">ул. Кирова 19-21</p>
     </div>
+    <script>
+      function createRose() {
+        const rose = document.createElement("div");
+        rose.innerHTML = "🌹";
+        rose.classList.add("rose");
+        document.body.appendChild(rose);
+
+        const startPos = Math.random() * window.innerWidth;
+        const duration = Math.random() * 3 + 2;
+
+        rose.style.left = `${startPos}px`;
+        rose.style.animationDuration = `${duration}s`;
+
+        setTimeout(() => {
+          rose.remove();
+        }, duration * 1000);
+      }
+
+      setInterval(createRose, 500);
+    </script>
   </body>
 </html>
