@@ -1,6 +1,4 @@
 function createRose() {
-  if (window.innerWidth < 480 && Math.random() > 0.5) return; // Меньше роз на телефоне
-
   const rose = document.createElement("div");
   rose.innerHTML = "🌹";
   rose.classList.add("rose");
